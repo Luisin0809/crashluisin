@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 212249740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1894415061}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: GoToSceneWithFade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &212249740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,6 +1033,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3337962755476396369, guid: d4731daf03e84ac4eb5c7ac451186530, type: 3}
   m_PrefabInstance: {fileID: 3202012951778131366}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1561730955 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6937637297238531202, guid: d4731daf03e84ac4eb5c7ac451186530, type: 3}
+  m_PrefabInstance: {fileID: 3202012951778131366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1618816094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,6 +1141,55 @@ Transform:
   m_Children:
   - {fileID: 969312115}
   m_Father: {fileID: 1438656186}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894415060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894415062}
+  - component: {fileID: 1894415061}
+  m_Layer: 0
+  m_Name: scenecontrol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1894415061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894415060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd0a23fab644604ea9db5d0758cd06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  onSceneStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  fade: {fileID: 1561730955}
+  fadeOutAnimationName: fadeout
+--- !u!4 &1894415062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894415060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.52612, y: 4.36536, z: -3.01061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901769566
 GameObject:
@@ -1356,6 +1422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7565135737334834048, guid: d4731daf03e84ac4eb5c7ac451186530, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1372,3 +1442,4 @@ SceneRoots:
   - {fileID: 672533303}
   - {fileID: 1438656186}
   - {fileID: 470483617}
+  - {fileID: 1894415062}

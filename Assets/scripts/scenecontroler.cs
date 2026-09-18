@@ -1,9 +1,9 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using System.Collections;
-
-public class SceneController : MonoBehaviour
+ 
+public class scenecontroler : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent onSceneStarted;
@@ -11,19 +11,22 @@ public class SceneController : MonoBehaviour
     private Animator fade;
     [SerializeField]
     private string fadeOutAnimationName = "FadeOut";
+ 
     private void Start()
     {
         onSceneStarted?.Invoke();
     }
-     private void GoToSceneWithFade(string sceneName)
-     {
+    public void GoToSceneWithFade(string sceneName)
+    {
         StartCoroutine(LoadSceneWithFade(sceneName));
-     }
-     private IEnumerator LoadSceneWithFade(string sceneName)
-     {
+    }
+    private IEnumerator LoadSceneWithFade(string sceneName)
+    {
         fade.Play(fadeOutAnimationName, 0, 0f);
-        yield return new WaitForSeconds (1f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneName);
-     }
-
+    }
+ 
 }
+ 
+ 
