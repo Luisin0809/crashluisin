@@ -8,7 +8,7 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     private CharacterController characterController;
     [SerializeField]
-    private JumpController jumpController;
+    private JumpControler jumpControler;
     [SerializeField]
     private float movementSpeed = 5f;
     [SerializeField]
@@ -16,7 +16,7 @@ public class MovementController : MonoBehaviour
     private void  Update()
     {
         Vector2 input = inputController.Movement;
-        Vector3 movement = new Vector3(input.x, jumpController.VerticalVelocity, input.y);
+        Vector3 movement = new Vector3(input.x, jumpControler.VerticalVelocity, input.y);
         Vector3 movementDirection = new Vector3(input.x, 0f, input.y);
         if (movementDirection.sqrMagnitude > 0f)
         {
@@ -28,5 +28,9 @@ public class MovementController : MonoBehaviour
     {
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         characterController.transform.rotation = Quaternion.Slerp(characterController.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+    public void StopMovement()
+    {
+        characterController.Move(Vector3.zero);
     }
 }
