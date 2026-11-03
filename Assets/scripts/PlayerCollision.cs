@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent<int> onCoinsCollected;
+    [SerializeField]
+    private UnityEvent onMaskCollected;
     [SerializeField]
     private UnityEvent<Transform> onEnemyHit;
     [SerializeField]
@@ -70,8 +73,17 @@ public class PlayerCollision : MonoBehaviour
         {
             jumpControler.HasGravity = false;
             onFall?.Invoke();
+        }   
+        else if (other.CompareTag("Mask"))
+        {
+        if (other.TryGetComponent(out Item item))
+        {
+            onMaskCollected?.Invoke();
+            item.Collect();
+        }
         }
     }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.CompareTag("Box"))
