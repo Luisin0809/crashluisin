@@ -36,10 +36,10 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (other.CompareTag("Enemy"))
         {
-            if (invincibility.IsGhost || invincibility.IsInvincible) return;
+            if (invincibility.IsGhost) return;
             if (other.TryGetComponent(out Enemy enemy))
             {
-                if (rollController.IsRolling)
+                if (rollController.IsRolling || invincibility.IsInvincible)
                 {
                     enemy.Die();
                     onEnemyHit?.Invoke(enemy.transform);
@@ -55,7 +55,7 @@ public class PlayerCollision : MonoBehaviour
         {
             if (other.TryGetComponent(out Box box))
             {
-                if (rollController.IsRolling)
+                if (rollController.IsRolling || invincibility.IsInvincible)
                 {
                     box.Break();
                 }
