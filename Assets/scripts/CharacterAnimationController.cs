@@ -1,5 +1,7 @@
 using UnityEngine;
  
+using UnityEngine;
+ 
 public class CharacterAnimationController : MonoBehaviour
 {
     [SerializeField]
@@ -18,6 +20,11 @@ public class CharacterAnimationController : MonoBehaviour
     {
         isActive=false;
         PlayAnimation(animationConfiguration.dieAnimationName);
+    }
+    public void Dance()
+    {
+        isActive = false;
+        PlayAnimation(animationConfiguration.danceAnimationName);
     }
     public void Roll()
     {

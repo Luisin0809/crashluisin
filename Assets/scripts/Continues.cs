@@ -1,17 +1,17 @@
 using UnityEngine;
 using TMPro;
-
+ 
 public class Continues : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI continuesText;
     [SerializeField]
-    private int initialContinues = 3;
-
+    private int initialContinues =3;
+   
     private int continuesCount;
-
+ 
     public bool HasContinues => continuesCount > 0;
-
+ 
     public void Initialize()
     {
         continuesCount = PlayerPrefs.GetInt("ContinuesCount", 3);
@@ -22,21 +22,27 @@ public class Continues : MonoBehaviour
         }
         UpdateContinuesText();
     }
-
+ 
     private void UpdateContinuesText()
     {
-        if (continuesText == null) return;
-        continuesText.text = "x" + continuesCount;
+        if (continuesText== null) return;
+        continuesText.text = "x"+ continuesCount;
     }
-
+ 
     public void LoseContinue()
     {
         continuesCount--;
         PlayerPrefs.SetInt("ContinuesCount", continuesCount);
         UpdateContinuesText();
     }
-    public void SetContinues(int count)
+    public void SetContinues (int count)
     {
         PlayerPrefs.SetInt("ContinuesCount", count);
+    }
+    public void AddContinues(int amount)
+    {
+        continuesCount += amount;
+        PlayerPrefs.SetInt("ContinuesCount", continuesCount);
+        UpdateContinuesText();
     }
 }

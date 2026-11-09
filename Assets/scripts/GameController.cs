@@ -7,8 +7,14 @@ public class GameController : MonoBehaviour
     private Transform player;
     [SerializeField]
     private UnityEvent onGameStart;
-        [SerializeField]
+    [SerializeField]
     private UnityEvent onGameRestart;
+    [SerializeField]
+    private UnityEvent onWinGame;
+    public void WinGame()
+    {
+        onWinGame?.Invoke();
+    }
     private void Start()
     {
         StartGame();
@@ -19,6 +25,6 @@ public class GameController : MonoBehaviour
     }
     public void RestartGame()
     {
-        onGameStart?.Invoke();
+        onGameRestart?.Invoke();
     }
 }
