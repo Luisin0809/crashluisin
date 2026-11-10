@@ -1,43 +1,73 @@
-using System;
 using UnityEngine;
+ 
 using UnityEngine.Events;
  
 public class GameOverController : MonoBehaviour
+ 
 {
+ 
     [SerializeField]
+ 
     private Continues continues;
+ 
     [SerializeField]
-    private UnityEvent onGameOver;
-    [SerializeField]
-    private UnityEvent onWinGame;
-    [SerializeField]
-    private float winDelay;
-    [SerializeField]
+ 
     private UnityEvent onContinueGame;
+ 
     [SerializeField]
+ 
+    private UnityEvent onGameOver;
+ 
+    [SerializeField]
+ 
+    private UnityEvent OnWinGame;
+ 
+    [SerializeField]
+ 
+    private float winDelay;
+ 
+    [SerializeField]
+ 
     private float deathDelay;
+ 
     public void CheckGameOver()
+ 
     {
+ 
         continues.LoseContinue();
-        Invoke(nameof(CheckContinues),deathDelay);
+ 
+        Invoke(nameof(CheckContinues), deathDelay);
+ 
     }
+ 
     private void CheckContinues()
+ 
     {
+ 
         if (continues.HasContinues)
+ 
         {
+ 
             onContinueGame?.Invoke();
+ 
         }
+ 
         else
+ 
         {
+ 
             onGameOver?.Invoke();
+ 
         }
+ 
     }
     public void WinGame()
     {
-        Invoke(nameof(InvokeWinGame), winDelay);
+        Invoke (nameof(InvokeWinGame), winDelay);
+ 
     }
     private void InvokeWinGame()
     {
-        onWinGame?.Invoke();
+        OnWinGame?.Invoke();
     }
 }

@@ -25,6 +25,7 @@ public class CharacterAnimationController : MonoBehaviour
     {
         isActive = false;
         PlayAnimation(animationConfiguration.danceAnimationName);
+        transform.LookAt(Camera.main.transform);
     }
     public void Roll()
     {

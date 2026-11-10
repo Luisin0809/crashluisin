@@ -8,6 +8,8 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private UnityEvent onContinueCollected;
     [SerializeField]
+    private UnityEvent onLevelGemCollected;
+    [SerializeField]
     private UnityEvent onMaskCollected;
     [SerializeField]
     private UnityEvent<Transform> onEnemyHit;
@@ -89,6 +91,14 @@ public class PlayerCollision : MonoBehaviour
             if (other.TryGetComponent(out Item item))
             {
                 onContinueCollected?.Invoke();
+                item.Collect();
+            }
+        }
+        else if (other.CompareTag("LevelGem"))
+        {
+            if (other.TryGetComponent(out Item item))
+            {
+                onLevelGemCollected?.Invoke();
                 item.Collect();
             }
         }
