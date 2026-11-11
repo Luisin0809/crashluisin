@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemParticles: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
-  itemSoundName: 
+  itemSoundName: 67
 --- !u!114 &8489269721461946847
 MonoBehaviour:
   m_ObjectHideFlags: 0
