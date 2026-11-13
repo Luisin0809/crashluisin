@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1080553226543987553}
   - component: {fileID: 5775209012835983590}
   m_Layer: 0
-  m_Name: continueBox
+  m_Name: ContinuesBox
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3657840991898170308}
-  m_Mesh: {fileID: -5221030768474385995, guid: d71f9585699a37d408f5760cdf1ced08, type: 3}
+  m_Mesh: {fileID: 5788894709939272865, guid: d71f9585699a37d408f5760cdf1ced08, type: 3}
 --- !u!23 &2515077789915489309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -154,10 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e53b26a5a5881c41bbe1fb55b29eb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Box
-  rewardObject: {fileID: 8951098398768318156, guid: 42a7a153623319d4289765e32ed32ecd, type: 3}
+  rewardObject: {fileID: 6053447303606595497, guid: e3e04f4d913bb2f43b8e2a523cd92b8b, type: 3}
   breakParticles: {fileID: 4992705485480177864, guid: 6a412a772f76c6347814fa85e8ddf027, type: 3}
   breakSoundName: grindr
-  rewardOffset: {x: 0, y: 0, z: 0}
+  rewardOffset: {x: 0, y: 0.75, z: 0}
 --- !u!1 &5194196436288192819
 GameObject:
   m_ObjectHideFlags: 0

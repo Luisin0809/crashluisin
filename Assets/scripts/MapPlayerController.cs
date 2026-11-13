@@ -45,6 +45,7 @@ public class MapPlayerController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position,
                 levelToMove.transform.position, Time.deltaTime * moveSpeed);
+            transform.LookAt(levelToMove.transform.position);    
             if (Vector3.Distance(transform.position, levelToMove.transform.position) < 0.1f)
             {
                 CurrentLevel = levelToMove;

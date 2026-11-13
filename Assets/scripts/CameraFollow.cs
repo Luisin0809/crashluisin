@@ -38,4 +38,3 @@ public class CameraFollow : MonoBehaviour
         transform.position = new Vector3(x, Mathf.Max(y, downLimit),z);
     }
 }
- 

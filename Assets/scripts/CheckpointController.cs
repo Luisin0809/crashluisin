@@ -9,6 +9,10 @@ public class CheckpointController : MonoBehaviour
     private CharacterController characterController;
     private Transform currentCheckpoint;
     public Transform CurrentCheckpoint { set { currentCheckpoint = value; } }
+    public void SetCurrentCheckpoint(Transform checkpoint )
+    {
+        currentCheckpoint = checkpoint;
+    }
     private void Awake()
     {
         currentCheckpoint = startPoint;

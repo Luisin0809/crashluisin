@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemParticles: {fileID: 904662820145583817, guid: 019faff12646bd8438ea56e8e7861fd8, type: 3}
-  itemSoundName: 
+  itemSoundName: yay
 --- !u!1001 &6381562394377415463
 PrefabInstance:
   m_ObjectHideFlags: 0

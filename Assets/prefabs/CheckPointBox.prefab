@@ -155,5 +155,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Box
   rewardObject: {fileID: 2241570896522652794, guid: b881efffde41a094c9ee3684ef08d78b, type: 3}
   breakParticles: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
-  breakSoundName: 
+  breakSoundName: grindr
   rewardOffset: {x: 0, y: 1, z: 0}

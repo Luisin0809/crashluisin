@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e5c36a895ae6444bb59f2652775ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotate
-  rotationSpeed: {x: 0, y: 0.52, z: 0}
+  rotationSpeed: {x: 0, y: 1.06, z: 0}
 --- !u!65 &5080447923524959177
 BoxCollider:
   m_ObjectHideFlags: 0
