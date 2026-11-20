@@ -373,7 +373,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TiTis
+          m_StringArgument: Motelear
           m_BoolArgument: 0
         m_CallState: 2
   fade: {fileID: 1359898182}
@@ -8967,8 +8967,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 79.270874, y: 1.7159662, z: 104.41928}
-  m_Center: {x: 10.168266, y: -5.35479, z: 22.841675}
+  m_Size: {x: 89.388664, y: 1.7159662, z: 104.41928}
+  m_Center: {x: 15.227169, y: -5.35479, z: 22.841675}
 --- !u!4 &1739256874
 Transform:
   m_ObjectHideFlags: 0
@@ -8977,13 +8977,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739256872}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.87184, y: -1.54, z: 11.68776}
+  m_LocalRotation: {x: -0, y: 0.6857968, z: -0, w: 0.7277931}
+  m_LocalPosition: {x: -50.636772, y: -1.54, z: 32.93602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 86.597, z: 0}
 --- !u!1 &1772014905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5054928217913559482, guid: 71f3a5a4e9a4f0c4e987e096c37a96e5, type: 3}
