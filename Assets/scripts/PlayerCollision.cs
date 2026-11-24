@@ -6,9 +6,9 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private UnityEvent<int> onCoinsCollected;
     [SerializeField]
-    private UnityEvent onContinueCollected;
-    [SerializeField]
     private UnityEvent onLevelGemCollected;
+    [SerializeField]
+    private UnityEvent onContinueCollected;
     [SerializeField]
     private UnityEvent onMaskCollected;
     [SerializeField]
@@ -55,6 +55,11 @@ public class PlayerCollision : MonoBehaviour
                 }
             }
         }
+        else if (other.CompareTag("Bola"))
+        {
+            if (invincibility.IsGhost) return;
+            onPlayerLose?.Invoke();
+        }
         else if (other.CompareTag("Box"))
         {
             if (other.TryGetComponent(out Box box))
@@ -96,7 +101,7 @@ public class PlayerCollision : MonoBehaviour
         }
         else if (other.CompareTag("LevelGem"))
         {
-            if (other.TryGetComponent(out Item item))
+            if (other.TryGetComponent (out Item item))
             {
                 onLevelGemCollected?.Invoke();
                 item.Collect();

@@ -1,7 +1,5 @@
 using UnityEngine;
  
-using UnityEngine;
- 
 public class CharacterAnimationController : MonoBehaviour
 {
     [SerializeField]
@@ -19,13 +17,15 @@ public class CharacterAnimationController : MonoBehaviour
     public void Die()
     {
         isActive=false;
+        isRolling=false;
         PlayAnimation(animationConfiguration.dieAnimationName);
     }
     public void Dance()
     {
         isActive = false;
         PlayAnimation(animationConfiguration.danceAnimationName);
-        transform.LookAt(Camera.main.transform);
+        Vector3 lookDirection = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        transform.LookAt(lookDirection);
     }
     public void Roll()
     {
@@ -41,6 +41,14 @@ public class CharacterAnimationController : MonoBehaviour
             if (IsAnimationFinished(animationConfiguration.rollAnimationName))
             {
                 isRolling = false;
+                if (isGrounded)
+                {
+                    UpdateGroundedAnimation();
+                }
+                else
+                {
+                    UpdateGroundedAnimation();
+                }
             }
         }
         else if (!wasGrounded && isGrounded)
@@ -98,9 +106,9 @@ public class CharacterAnimationController : MonoBehaviour
     }
     private bool IsAnimationFinished(string animationName)
     {
+        if (animator.IsInTransition(0)) return false;
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.IsName(animationName) && stateInfo.normalizedTime >= 1f;
     }
-       
- 
+    
 }

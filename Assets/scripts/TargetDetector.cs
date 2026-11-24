@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
- 
 public class TargetDetector : MonoBehaviour
 {
     [SerializeField]
@@ -9,7 +8,6 @@ public class TargetDetector : MonoBehaviour
     private UnityEvent<GameObject> onTargetLost;
     [SerializeField]
     private string targetTag;
- 
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(targetTag))
@@ -17,7 +15,6 @@ public class TargetDetector : MonoBehaviour
             onTargetDetected.Invoke(other.gameObject);
         }
     }
- 
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag(targetTag))
