@@ -5,31 +5,29 @@ using UnityEngine.Rendering;
  
 public class RollControler : MonoBehaviour
 {
-   [SerializeField]
-   private InputController inputController;
-   [SerializeField]
-   private UnityEvent onRoll;
-   [SerializeField]
-   private float rollDuration = 1f;
-   [SerializeField]
+    [SerializeField]
+    private UnityEvent onRoll;
+    [SerializeField]
+    private float rollDuration = 1f;
+    [SerializeField]
     private float cooldown = 0.5f;
-   [SerializeField]
-   private Collider rollCollider;
-   [SerializeField]
-   private GameObject rollEffectPrefab;
-   [SerializeField]
-   private float effectOffsetY = 0.5f;
-   private bool isRolling = false;
-   public bool IsRolling => isRolling;
-   private bool canRoll = true;
-   private void Awake()
+    [SerializeField]
+    private Collider rollCollider;
+    [SerializeField]
+    private GameObject rollEffectPrefab;
+    [SerializeField]
+    private float effectOffsetY = 0.5f;
+    private bool isRolling = false;
+    public bool IsRolling => isRolling;
+    private bool canRoll = true;
+    private void Awake()
     {
         rollCollider.enabled = false;
         canRoll = true;
     }
-   private void Update()
+    public void TryRoll()
     {
-        if (canRoll &&!IsRolling && inputController.Roll)
+        if (canRoll && !IsRolling)
         {
             Roll();
         }
@@ -53,6 +51,5 @@ public class RollControler : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canRoll = true;
     }
- 
     
 }
